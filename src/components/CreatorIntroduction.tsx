@@ -1,11 +1,10 @@
 "use client";
 
-import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-import Image from "next/image";
-import VideoPlayer from "./VideoPlayer";
+import { useRef } from "react";
+import VideoTeaser from "./VideoTeaser";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,7 +45,7 @@ const CreatorIntroduction = () => {
         duration: 2,
         delay: 3,
         scrollTrigger: {
-          trigger: "#videoSection",
+          trigger: "#creatorIntroSection",
           start: "top bottom",
           end: "bottom bottom",
           scrub: 1,
@@ -58,18 +57,18 @@ const CreatorIntroduction = () => {
   return (
     <section
       id="creatorIntroSection"
-      className="h-dvh w-full flex md:gap-5 flex-col md:flex-row justify-center items-center"
+      className="h-dvh w-full flex relative md:gap-5 flex-col md:flex-row justify-center items-center"
     >
       {/* Placeholder for the video section */}
-     <VideoPlayer src="/videos/portfolio_teaser.mp4"/>
+     <VideoTeaser vimeoId="996238979" videoId="810CHvSdXOo"/>
 
       {/* Text content section */}
       <div
         ref={textRef}
-        className="w-[28rem] max-w-[90%] h-64 py-1 text-white flex flex-col justify-between"
+        className="w-[29rem] max-w-[90%] h-64 py-1 text-white flex flex-col justify-between"
       >
         {/* Section heading */}
-        <h3 className="text-3xl font-semibold">"WHO AM I?"</h3>
+        <h3 className="text-3xl font-semibold">&#34;WHO AM I?&#34;</h3>
 
         {/* Introduction paragraph */}
         <p>
