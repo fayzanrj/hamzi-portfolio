@@ -3,19 +3,41 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import VideoTeaser from "./VideoTeaser";
+import {
+  PiArrowDownDuotone,
+  PiArrowLeftDuotone,
+  PiArrowUpDuotone,
+} from "react-icons/pi";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const CreatorIntroduction = () => {
   // Refs for video and text elements
-  const videoRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
+
+  // State to determine screen size
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check if window is available and set screen size state
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup event listener on unmount
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Using GSAP for animations
   useGSAP(() => {
-   
     // Animate the text section sliding in from the bottom
     gsap.fromTo(
       textRef.current?.children!,
@@ -57,10 +79,10 @@ const CreatorIntroduction = () => {
   return (
     <section
       id="creatorIntroSection"
-      className="h-dvh w-full flex relative md:gap-5 flex-col md:flex-row justify-center items-center"
+      className="h-svh w-full overflow-hidden flex md:gap-5 flex-col md:flex-row justify-center items-center"
     >
       {/* Placeholder for the video section */}
-     <VideoTeaser vimeoId="996238979" videoId="810CHvSdXOo"/>
+      <VideoTeaser vimeoId="996238979" videoId="810CHvSdXOo" />
 
       {/* Text content section */}
       <div
@@ -79,9 +101,24 @@ const CreatorIntroduction = () => {
 
         {/* Additional information links */}
         <div>
-          <p>More about me</p>
+          <div>
+            <span>
+              {isMobile ? (
+                <PiArrowUpDuotone className="inline-block align-middle" />
+              ) : (
+                <PiArrowLeftDuotone className="inline-block align-middle" />
+              )}
+            </span>
+            <p> More about me </p>
+            <span className="text-xs">(click the video)</span>
+          </div>
 
-          <p>More about me and my work</p>
+          <div>
+            <span>
+              <PiArrowDownDuotone className="inline-block align-middle" />
+            </span>
+            <p>More about me and my work</p>
+          </div>
         </div>
       </div>
     </section>

@@ -58,7 +58,7 @@ const VideoTeaser: React.FC<VideoTeaserProps> = ({ vimeoId, videoId }) => {
       {/* Teaser container */}
       <div
         ref={videoContainerRef}
-        className="relative max-w-[90%]  cursor-pointer"
+        className="relative max-w-[95vw] overflow-hidden cursor-pointer"
       >
         {/* Vimeo id contaier */}
         <Vimeo
@@ -66,8 +66,10 @@ const VideoTeaser: React.FC<VideoTeaserProps> = ({ vimeoId, videoId }) => {
           autoplay
           controls={false}
           paused={isPaused}
+          muted
           loop
-          className=" w-full h-full max-w-[90%]"
+          playsInline
+          className=" w-full h-full"
         />
 
         {/* Empty container for click */}

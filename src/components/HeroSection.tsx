@@ -34,19 +34,17 @@ const HeroSection = () => {
       transform: "translate(0,0)",
       borderRadius: "100%",
       scrollTrigger: {
-        trigger: "#creatorSpotlight", 
+        trigger: "#creatorSpotlight",
         scroller: "body",
-        start: "top bottom",
-        end: "bottom bottom",
+        start: () => "top " + window.innerHeight , 
+        end: () => "top " + window.innerHeight * 0.02,
         scrub: 1,
       },
     });
   });
 
   return (
-    <section className="relative h-svh overflow-hidden">
-      {/* Signature component */}
-      <Signature />
+    <section className="relative max-w-[100vw] h-svh overflow-hidden">
 
       {/* Marquee text */}
       <h2

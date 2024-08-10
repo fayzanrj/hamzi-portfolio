@@ -79,17 +79,17 @@ const CreatorSpotlightSection = () => {
   return (
     <section
       id="creatorSpotlight"
-      className="w-full h-dvh relative text-black font-bold overflow-hidden content-center"
+      className="w-full h-svh relative text-white font-bold overflow-hidden content-center"
     >
       {/* Background Image */}
       <Image
         ref={imageRef}
-        src="/potrait.jpg"
+        src="/creator.png"
         alt="portrait"
-        layout="fill"
-        className="object-cover mx-auto"
-        sizes="100vw"
+        className="w-60 sm:w-64 md:w-80 mx-auto"
         quality={100}
+        width={999}
+        height={999}
       />
 
       {/* First Text Element: Creator Name */}
@@ -104,7 +104,7 @@ const CreatorSpotlightSection = () => {
       {/* Second Text Element: Creator Roles */}
       <div
         ref={textRef2}
-        className={`${caveatFont} text-lg md:text-xl absolute left-[2%] sm:left-[15%] md:left-[25%] lg:left-[35%] top-[40%]`}
+        className={`${caveatFont} text-lg md:text-xl absolute left-[2%] sm:left-[15%] md:left-[20%] lg:left-[30%] top-[40%]`}
       >
         <p>VIDEO EDITOR</p>
         <p>3D MODELER</p>
@@ -114,7 +114,7 @@ const CreatorSpotlightSection = () => {
       {/* Third Text Element: Portfolio Video */}
       <div
         ref={textRef3}
-        className={`${caveatFont} absolute right-[2%] sm:right-[15%] md:right-[25%] lg:right-[35%] top-[40%]`}
+        className={`${caveatFont} absolute right-[4%] sm:right-[10%] md:right-[20%] lg:right-[30%] top-[35%]`}
       >
         <p className="relative text-xl">Portfolio video</p>
         <PiArrowDownDuotone className="absolute left-1/2" />
