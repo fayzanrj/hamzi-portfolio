@@ -19,7 +19,7 @@ const HeroSection = () => {
   useGSAP(() => {
     // Animation for marquee text
     gsap.to(marqueeRef.current, {
-      translateX: "-100%",
+      translateX: "-102%",
       delay: 2.5,
       duration: 30,
       repeat: -1,
@@ -34,7 +34,7 @@ const HeroSection = () => {
       transform: "translate(0,0)",
       borderRadius: "100%",
       scrollTrigger: {
-        trigger: "#creatorSpotlight",
+        trigger: "#creatorIntroSection",
         scroller: "body",
         start: () => "top " + window.innerHeight , 
         end: () => "top " + window.innerHeight * 0.02,

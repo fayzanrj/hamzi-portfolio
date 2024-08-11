@@ -1,6 +1,7 @@
 import CreatorIntroduction from "@/components/CreatorIntroduction";
-import CreatorSpotlightSection from "@/components/CreatorSpotlightSection";
+import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
+import PreviousWork from "@/components/PreviousWork";
 import Signature from "@/components/Signature";
 
 const Home = () => {
@@ -8,8 +9,9 @@ const Home = () => {
     <main>
       <Signature />
       <HeroSection />
-      <CreatorSpotlightSection />
       <CreatorIntroduction />
+      <PreviousWork />
+      <Footer />
     </main>
   );
 };

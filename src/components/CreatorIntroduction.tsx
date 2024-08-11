@@ -109,7 +109,7 @@ const CreatorIntroduction = () => {
                 <PiArrowLeftDuotone className="inline-block align-middle" />
               )}
             </span>
-            <p> More about me </p>
+            <p className="inline-block"> More about me </p>
             <span className="text-xs">(click the video)</span>
           </div>
 
@@ -117,7 +117,7 @@ const CreatorIntroduction = () => {
             <span>
               <PiArrowDownDuotone className="inline-block align-middle" />
             </span>
-            <p>More about me and my work</p>
+            <p className="inline-block">More about me and my work</p>
           </div>
         </div>
       </div>
