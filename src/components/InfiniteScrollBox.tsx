@@ -19,7 +19,7 @@ const InfiniteScrollBox: React.FC<InfiniteScrollBoxProps> = ({
   boxStyles = "",
 }) => {
   useEffect(() => {
-    const boxWidth = variant === "clientBox" ? 140 : 232; // Width of each box including spacing
+    const boxWidth = variant === "clientBox" ? 156 : 232; // Width of each box including spacing
     const totalWidth = boxWidth * boxCount;
 
     // Setting initial position of each box
@@ -28,7 +28,7 @@ const InfiniteScrollBox: React.FC<InfiniteScrollBoxProps> = ({
     });
 
     gsap.to(`.${variant}`, {
-      duration: duration, 
+      duration: duration,
       ease: "none",
       x: `+=${totalWidth}`,
       modifiers: {
@@ -40,12 +40,22 @@ const InfiniteScrollBox: React.FC<InfiniteScrollBoxProps> = ({
 
   return (
     <div>
-      <h3 className="text-center text-lg sm:text-xl md:text-2xl uppercase font-semibold">{title}</h3>
-      <div className={`mx-auto w-[98%] sm:w-full max-w-[1250px] my-4 overflow-hidden relative ${variant === "clientBox" ? "h-24" : "h-40"}`}>
+      <h3 className="text-center text-lg sm:text-xl md:text-2xl uppercase font-semibold">
+        {title}
+      </h3>
+      <div
+        className={`mx-auto w-full max-w-[1400px] my-4 overflow-hidden relative ${
+          variant === "clientBox" ? "h-24" : "h-40"
+        }`}
+      >
+        <div className="absolute inset-0 pointer-events-none  z-10 BG_GRADIENT"></div>
+
         {Array.from({ length: boxCount }, (_, i) => (
           <div
             key={i}
-            className={`${variant} absolute ${variant === "clientBox" ? "-left-32" : "-left-60"} top-1/2 -translate-y-1/2 w-32 h-20 rounded-md flex-shrink-0 border flex justify-center items-center ${boxStyles}`}
+            className={`${variant} absolute ${
+              variant === "clientBox" ? "-left-32" : "-left-60"
+            } bg-gray-400 top-1/2 -translate-y-1/2 w-32 h-20 rounded-md flex-shrink-0 border flex justify-center items-center ${boxStyles}`}
           >
             {i + 1}
           </div>

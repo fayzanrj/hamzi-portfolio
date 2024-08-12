@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import PreviousWork from "@/components/PreviousWork";
 import Signature from "@/components/Signature";
+import WallOfEdits from "@/components/WallOfEdits";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <HeroSection />
       <CreatorIntroduction />
       <PreviousWork />
+      <WallOfEdits/>
       <Footer />
     </main>
   );

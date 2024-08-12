@@ -4,7 +4,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { useRef } from "react";
-import Signature from "./Signature";
 
 // Registering GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -36,7 +35,7 @@ const HeroSection = () => {
       scrollTrigger: {
         trigger: "#creatorIntroSection",
         scroller: "body",
-        start: () => "top " + window.innerHeight , 
+        start: () => "top " + window.innerHeight,
         end: () => "top " + window.innerHeight * 0.02,
         scrub: 1,
       },
@@ -45,7 +44,6 @@ const HeroSection = () => {
 
   return (
     <section className="relative max-w-[100vw] h-svh overflow-hidden">
-
       {/* Marquee text */}
       <h2
         ref={marqueeRef}
