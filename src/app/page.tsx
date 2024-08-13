@@ -1,5 +1,6 @@
 import CreatorIntroduction from "@/components/CreatorIntroduction";
 import Footer from "@/components/Footer";
+import FrequentlyAskedQuestions from "@/components/FrequentlyAskedQuestions";
 import HeroSection from "@/components/HeroSection";
 import PreviousWork from "@/components/PreviousWork";
 import Signature from "@/components/Signature";
@@ -12,7 +13,8 @@ const Home = () => {
       <HeroSection />
       <CreatorIntroduction />
       <PreviousWork />
-      <WallOfEdits/>
+      <WallOfEdits />
+      <FrequentlyAskedQuestions />
       <Footer />
     </main>
   );
