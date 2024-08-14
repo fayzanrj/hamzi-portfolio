@@ -82,9 +82,10 @@ const QuestionItem: React.FC<QuestionItemProps> = ({ question, answer }) => {
         className="cursor-pointer flex justify-between items-center"
         onClick={toggleAnswer}
       >
-        <p className="text-lg font-medium">{question}</p>
+        <p className="text-basis md:text-lg font-medium">{question}</p>
         <IoMdClose
-          className={`${isOpened ? "rotate-0" : "rotate-45"} duration-100`}
+          className={`${isOpened ? "rotate-0" : "rotate-45"} duration-200`}
+          size={'1.2rem'}
         />
       </div>
       <p ref={answerRef} className="overflow-hidden h-0 opacity-0">

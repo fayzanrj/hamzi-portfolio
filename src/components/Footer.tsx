@@ -43,7 +43,10 @@ const Footer = () => {
       </div>
       <div className="py-2 border-t border-stone-800 font-bold italic text-center">
         <h3 className="text-sm sm:text-basis md:text-lg">
-          DESIGN BY HAMZI & WEBSITE BY FAYZAN
+          DESIGN BY <a href="/" className="underline">HAMZA</a> & <a href="/" className="underline">FAYZAN</a>
+        </h3>
+        <h3 className="text-sm sm:text-basis md:text-lg">
+          WEBSITE BY <a href="/" className="underline">FAYZAN</a>
         </h3>
       </div>
     </footer>

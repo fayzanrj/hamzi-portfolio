@@ -5,6 +5,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { useRef } from "react";
+import WallOfEditItem from "./WallOfEditsItem";
+import WallOfEditsItem from "./WallOfEditsItem";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,33 +48,15 @@ const WallOfEdits = () => {
         ref={wallRef}
         className="flex h-[38rem] md:h-[95vh] items-center px-10 my-5"
       >
-        {wallOfEditsItems.map((item, index) =>
-          index % 2 === 0 ? (
-            <div key={index} className="flex-shrink-0 w-72 md:w-96 ">
-              <p className="text-center mt-2 w-full h-72  p-8 text-white font-black italic text-2xl content-center">{item.text}</p>
-              <Image
-                src={item.img}
-                width={999}
-                height={999}
-                alt={`Image ${index}`}
-                quality={100}
-                className="object-cover"
-              />
-            </div>
-          ) : (
-            <div key={index} className="flex-shrink-0 w-72 md:w-96">
-              <Image
-                src={item.img}
-                width={999}
-                height={999}
-                alt={`Image ${index}`}
-                quality={100}
-                className="object-contain"
-              />
-              <p className="text-center mt-2 w-full h-72  p-8 text-white font-black italic text-2xl content-center">{item.text}</p>
-            </div>
-          )
-        )}
+        {wallOfEditsItems.map((item, index) => (
+          <WallOfEditsItem
+            key={index}
+            imageUrl={item.img}
+            qoute={item.text}
+            reverse={index % 2 !== 0}
+            videoId="810CHvSdXOo"
+          />
+        ))}
       </div>
     </section>
   );
