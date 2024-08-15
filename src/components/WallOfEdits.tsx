@@ -3,14 +3,15 @@ import { wallOfEditsItems } from "@/constants/ITEMS";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
-import { useRef } from "react";
-import WallOfEditItem from "./WallOfEditsItem";
+import { useRef, useState } from "react";
 import WallOfEditsItem from "./WallOfEditsItem";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const WallOfEdits = () => {
+  // State
+  const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
+  // Ref
   const wallRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
@@ -24,16 +25,6 @@ const WallOfEdits = () => {
         end: `top -200%`,
         scrub: 2,
         pin: true,
-      },
-    });
-
-    gsap.from("#wallOfEdits", {
-      y: 200,
-      opacity: 0,
-      scrollTrigger: {
-        trigger: "#wallOfEdits",
-        start: "top bottom",
-        end: "bottom bottom",
       },
     });
   });
@@ -53,8 +44,11 @@ const WallOfEdits = () => {
             key={index}
             imageUrl={item.img}
             qoute={item.text}
+            videoId={item.videoId}
             reverse={index % 2 !== 0}
-            videoId="810CHvSdXOo"
+            isPlaying={activeVideoId === item.videoId}
+            playVideo={() => setActiveVideoId(item.videoId)}
+            stopVideo={() => setActiveVideoId(null)}
           />
         ))}
       </div>
