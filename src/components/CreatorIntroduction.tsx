@@ -3,13 +3,9 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef, useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { PiArrowDownDuotone } from "react-icons/pi";
 import VideoTeaser from "./VideoTeaser";
-import {
-  PiArrowDownDuotone,
-  PiArrowLeftDuotone,
-  PiArrowUpDuotone,
-} from "react-icons/pi";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,10 +26,10 @@ const CreatorIntroduction = () => {
     handleResize();
 
     // Add event listener for window resize
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     // Cleanup event listener on unmount
-    return () => window.removeEventListener('resize', handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // Using GSAP for animations
@@ -101,8 +97,8 @@ const CreatorIntroduction = () => {
 
         {/* Additional information links */}
         <div>
-          <div>
-            <span>
+          {/* <div>
+           <span>
               {isMobile ? (
                 <PiArrowUpDuotone className="inline-block align-middle" />
               ) : (
@@ -110,7 +106,7 @@ const CreatorIntroduction = () => {
               )}
             </span>
             <p className="inline-block"> More about me in the video</p>
-          </div>
+          </div> */}
 
           <div>
             <span>
