@@ -5,6 +5,7 @@ import HeroSection from "@/components/HeroSection";
 import PreviousWork from "@/components/PreviousWork";
 import Signature from "@/components/Signature";
 import Skills from "@/components/Skills";
+import Videos from "@/components/Videos";
 import WallOfEdits from "@/components/WallOfEdits";
 
 const Home = () => {
@@ -12,9 +13,11 @@ const Home = () => {
     <main>
       <Signature />
       <HeroSection />
+
       <CreatorIntroduction />
+      <Videos />
       <PreviousWork />
-      <Skills/>
+      <Skills />
       <WallOfEdits />
       <FrequentlyAskedQuestions />
       <Footer />
